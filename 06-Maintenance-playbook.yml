@@ -1,0 +1,11 @@
+---
+- name: Maintenance Page
+  hosts: Group1
+  become: yes
+
+  tasks:
+  - name: Update Maintenance
+    copy:
+     src: Maintenance.html
+     dest: var/www/html/index.html
+...
