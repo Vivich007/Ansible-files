@@ -22,9 +22,23 @@
      enabled: yes
     when: ansible_distribution == "centos"
 
-- name: Install apache server
-  hosts: Group1
-  become: yes
+  - name: Install httpd
+    yum:
+     name: httpd
+     state: present
+    when: ansible_distribution == "Amazon"
+
+  - name: Start httpd
+    service:
+     name: httpd
+     state: started
+    when: ansible_distribution == "Amazon"
+
+  - name: Enable httpd
+    service:
+     name: httpd
+     enabled: yes
+    when: ansible_distribution == "Amazon"
   
   tasks:
   - name: Install apache2
