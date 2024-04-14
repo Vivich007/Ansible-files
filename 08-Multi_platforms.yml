@@ -18,10 +18,6 @@
     service:
      name: httpd
      enabled: yes
-
-- name: Install apache server
-  hosts: Group1
-  become: yes
   
   tasks:
   - name: Install apache2
