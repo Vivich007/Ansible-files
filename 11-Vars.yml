@@ -4,6 +4,7 @@
   become: yes
   vars:
    myusername: Vivich007
+   mywelcomemessage: Happy to see you!
 
   tasks:
   - name: Update Dynamic Page
