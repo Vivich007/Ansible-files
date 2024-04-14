@@ -1,11 +1,12 @@
 ---
-- name: Static Page
+- name: Dynamic Page
   hosts: Group1
   become: yes
 
   tasks:
-  - name: Update Static Page
-    copy:
-     src: static.html
-     dest: /var/www/html/static.html
+  - name: Update Dynamic Page
+    template:
+     src: dynamic.j2
+     dest: /var/www/html/dynamic.html
+     force: yes
 ...
