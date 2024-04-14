@@ -8,19 +8,16 @@
     dnf:
      name: httpd
      state: present
-    when: ansible_distribution == "centos"
-  
+
   - name: Start httpd
     service:
      name: httpd
      state: started
-    when: ansible_distribution == "centos"
 
   - name: Enable httpd
     service:
      name: httpd
      enabled: yes
-    when: ansible_distribution == "centos"
 
 - name: Install apache server
   hosts: Group1
